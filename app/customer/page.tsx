@@ -29,7 +29,7 @@ export default function Customer() {
     useEffect(() => {
       const fetchDeliveryBoys = async () => {
         try {
-          const response = await fetch('http://localhost:8000/api/getDeliveryBoys',{
+          const response = await fetch('https://confused-rose-headscarf.cyclic.app/api/getDeliveryBoys',{
             headers: {
               'Content-Type': 'application/json',
               //  Authorization: `${token}`
@@ -57,7 +57,7 @@ export default function Customer() {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       try {
-        const response = await fetch('http://localhost:8000/api/createCustomer', {
+        const response = await fetch('https://confused-rose-headscarf.cyclic.app/api/createCustomer', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -9,13 +9,13 @@ import { deleteCookie } from 'cookies-next';
 import Navbar from '../components/Navbar';
 
 const getLunchData=async ()=>{
-  const res = await fetch('http://localhost:8000/api/newOrders/lunch',{ cache: 'no-store' });
+  const res = await fetch('https://confused-rose-headscarf.cyclic.app/api/newOrders/lunch',{ cache: 'no-store' });
   return res.json();
   
 
 }
 const getDeliveryBoys=async ()=>{
-  const res = await fetch('http://localhost:8000/api/getDeliveryBoys',{ cache: 'no-store' });
+  const res = await fetch('https://confused-rose-headscarf.cyclic.app/api/getDeliveryBoys',{ cache: 'no-store' });
   const response= res.json();
   return response
   

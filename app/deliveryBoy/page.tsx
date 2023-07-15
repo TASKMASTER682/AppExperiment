@@ -11,7 +11,7 @@ const CreateDeliveryBoy = () => {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       try {
-        const response = await fetch('http://localhost:8000/api/deliveryBoy', {
+        const response = await fetch('https://confused-rose-headscarf.cyclic.app/api/deliveryBoy', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -4,7 +4,7 @@ import DeliverButton from "@/app/components/DeliverButton";
 
 
 const getDinnerData=async ()=>{
-    const res = await fetch('http://localhost:8000/api/newOrders/dinner',{ cache: 'no-store' });
+    const res = await fetch('https://confused-rose-headscarf.cyclic.app/api/newOrders/dinner',{ cache: 'no-store' });
     return res.json();
 
   }

@@ -10,7 +10,7 @@ const DeliveryButton: React.FC<DeliveryOrderProps> = ({customerId,orderId}) => {
     const [deliveryText,setDeliveryText]=useState('Undelivered')
     const handleDeliveryOrder = async () => {
         try {
-          const response = await fetch(`http://localhost:8000/api/customer/${customerId}/order/delivery/${orderId}`, {
+          const response = await fetch(`https://confused-rose-headscarf.cyclic.app/api/customer/${customerId}/order/delivery/${orderId}`, {
             method: 'PUT',
             headers: {
               Accept: 'application/json',

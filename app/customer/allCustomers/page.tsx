@@ -29,7 +29,7 @@ export default function AllCustomer(){
   };
 
   const fetchCustomers=async ()=>{
-    const res = await fetch('http://localhost:8000/api/getAllCustomers',{ cache: 'no-store' });
+    const res = await fetch('https://confused-rose-headscarf.cyclic.app/api/getAllCustomers',{ cache: 'no-store' });
     const response= await res.json();
     setCustomers(response)
     
@@ -56,7 +56,7 @@ function selectCustomer(subs:any,pesa:any,phone:any,id:any,end:any,rsub:any){
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-          const response = await fetch(`http://localhost:8000/api/updateCustomer/${newCom}`, {
+          const response = await fetch(`https://confused-rose-headscarf.cyclic.app/api/updateCustomer/${newCom}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',

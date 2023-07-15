@@ -7,7 +7,7 @@ interface Order {
 //https://confused-rose-headscarf.cyclic.app
 //http://localhost:8000/api
 const OrderHistory=async ({ params }: { params: { customerId: string } }) => {
-  const res = await fetch(`http://localhost:8000/api/orderHistory/${params.customerId}`,{ cache: 'no-store' });
+  const res = await fetch(`https://confused-rose-headscarf.cyclic.app/api/orderHistory/${params.customerId}`,{ cache: 'no-store' });
   const orders =await res.json();
   
 // const orders=await getData(params.customerId)

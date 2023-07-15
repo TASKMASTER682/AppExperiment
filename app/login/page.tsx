@@ -21,7 +21,7 @@ export default function Login(){
       setLoading(true)
   
       try {
-         await fetch(`http://localhost:8000/api/deliverySignin`, {
+         await fetch(`https://confused-rose-headscarf.cyclic.app/api/deliverySignin`, {
           method: 'POST',
           headers: {
             Accept: 'application/json',

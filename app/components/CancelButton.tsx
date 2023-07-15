@@ -16,7 +16,7 @@ const CancelButton: React.FC<CancelOrderProps> = ({customerId,orderId}) => {
 
   const handleCancelOrder = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/customer/${customerId}/order/${orderId}`, {
+      const response = await fetch(`https://confused-rose-headscarf.cyclic.app/api/customer/${customerId}/order/${orderId}`, {
         method: 'PUT',
         headers: {
           Accept: 'application/json',

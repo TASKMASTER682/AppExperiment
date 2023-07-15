@@ -8,7 +8,7 @@ export default async function SingleBoy({ params }: { params: { deliveryId: stri
     const router=useRouter()
 
 
-    const res = await fetch(`http://localhost:8000/api/getDeliveryBoys/${params.deliveryId}`,{ cache: 'no-store' });
+    const res = await fetch(`https://confused-rose-headscarf.cyclic.app/api/getDeliveryBoys/${params.deliveryId}`,{ cache: 'no-store' });
     const boys= await res.json();
   
     if (!boys) return <div>Loading...</div>;
