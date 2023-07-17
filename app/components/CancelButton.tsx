@@ -9,7 +9,6 @@ interface CancelOrderProps {
 
 const CancelButton: React.FC<CancelOrderProps> = ({customerId,orderId}) => {
   // const [customerId, setCustomerId] = useState('');
-  // const [orderId, setOrderId] = useState('');
   const [cancelText, setCancelText] = useState('Activated');
 
 
@@ -44,6 +43,7 @@ const CancelButton: React.FC<CancelOrderProps> = ({customerId,orderId}) => {
     if (answer) {
         handleCancelOrder();
         setCancelText('Cancelled')
+        window.location.reload();
     }
 };
   

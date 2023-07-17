@@ -38,6 +38,8 @@ const DeliveryButton: React.FC<DeliveryOrderProps> = ({customerId,orderId}) => {
         if (answer) {
             handleDeliveryOrder();
             setDeliveryText('Delivered')
+            window.location.reload();
+
         }
     };
 
