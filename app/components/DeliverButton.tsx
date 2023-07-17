@@ -7,7 +7,7 @@ interface DeliveryOrderProps {
 }
 
 const DeliveryButton: React.FC<DeliveryOrderProps> = ({customerId,orderId}) => {
-    const [deliveryText,setDeliveryText]=useState('Undelivered')
+    const [deliveryText,setDeliveryText]=useState('Active')
     const handleDeliveryOrder = async () => {
         try {
           const response = await fetch(`https://confused-rose-headscarf.cyclic.app/api/customer/${customerId}/order/delivery/${orderId}`, {
