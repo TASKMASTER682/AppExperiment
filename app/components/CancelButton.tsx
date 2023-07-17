@@ -49,7 +49,7 @@ const CancelButton: React.FC<CancelOrderProps> = ({customerId,orderId}) => {
   
   return (
     <div>
-      <button className={cancelText==='Activated'? 'bg-green-400 rounded-md p-2' : 'bg-red-400 rounded-md p-2'} onClick={cancelConfirm}>{cancelText}</button>
+      <button className={cancelText==='Cancel'? 'bg-green-400 rounded-md p-2' : 'bg-red-400 rounded-md p-2'} onClick={cancelConfirm}>{cancelText}</button>
     </div>
   );
 };

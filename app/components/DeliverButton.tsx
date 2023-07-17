@@ -45,7 +45,7 @@ const DeliveryButton: React.FC<DeliveryOrderProps> = ({customerId,orderId}) => {
 
     return(
         <div>
-            <button className= {deliveryText==='Undelivered'? 'bg-red-400 rounded-md p-2' : 'bg-green-400 rounded-md p-2'} onClick={deliveryConfirm}>{deliveryText}</button>
+            <button className= {deliveryText==='Active'? 'bg-red-400 rounded-md p-2' : 'bg-green-400 rounded-md p-2'} onClick={deliveryConfirm}>{deliveryText}</button>
         </div>
     )
 }
