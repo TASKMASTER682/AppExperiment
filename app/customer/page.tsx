@@ -59,12 +59,14 @@ export default function Customer() {
         const response = await fetch('https://confused-rose-headscarf.cyclic.app/api/createCustomer', {
           method: 'POST',
           headers: {
+            Accept: 'application/json',
             'Content-Type': 'application/json',
-            
           },
           body: JSON.stringify({ name,address,phone,email,subscription,price,subscriptionStart, subscriptionEnd, dinnerTiffins, lunchTiffins,pincode,deliveryBoy  }),
         });
-        // const data = await response.json();
+        const data = await response.json();
+        console.log('User created:', data);
+
     setName("")
     setEmail("")
     setAddress("")
@@ -81,7 +83,6 @@ export default function Customer() {
 
   
 
-        // console.log('User created:', data);
         // You can perform any necessary actions after successful creation
       } catch (error) {
         console.log('Failed to create user:', error);
@@ -90,11 +91,12 @@ export default function Customer() {
 
   
   return (
-    <form className=" my-6" onSubmit={handleSubmit}>
+    <form autoComplete="off"  className=" my-6" onSubmit={handleSubmit}>
     <h3 className="text-6xl text-red-500 m-4 underline font-bold">Create Customer</h3>
     <div className=" p-3 ">
      
       <input
+      id='name'
       className=" shadow-md rounded-md p-3 border-red-500 border-2 w-[50%]"
       placeholder="Name of Customer"
         type="text"
@@ -107,6 +109,7 @@ export default function Customer() {
     <p className="text-teal-500 text-lg m-2">Set Number of Tiffins in Dinner</p>
 
           <input
+          id='dinnerTiff'
             type="number"
             placeholder="Number of Tiffins Ind Dinner For Whole Month"
             className="shadow-md rounded-md p-3 border-red-500 border-2 w-[50%]"
@@ -118,7 +121,7 @@ export default function Customer() {
         <p className="text-teal-500 text-lg m-2">Set Number of Tiffins in Lunch</p>
           <input
             type="number"
-            
+            id='lunchTiff'
             className="shadow-md rounded-md p-3 border-red-500 border-2 w-[50%]"
             placeholder="Number of Tiffins In Lunch For Whole Month"
             value={lunchTiffins}
@@ -165,6 +168,7 @@ export default function Customer() {
     </div>
     <div className="p-3">
       <input
+      id='address'
         placeholder="Address"
         className=" shadow-md rounded-md p-3 border-red-500 border-2 w-[50%]"
         type="address"
@@ -174,6 +178,7 @@ export default function Customer() {
     </div>
     <div className="p-3">
       <input
+      id='phone'
         placeholder="Mobile Number"
         className=" shadow-md rounded-md p-3 border-red-500 border-2 w-[50%]"
         type="phone"
@@ -185,6 +190,7 @@ export default function Customer() {
 
     <div className="p-3">
       <input
+        id='price'
         placeholder="Price of a Tiffin"
         className=" shadow-md rounded-md p-3 border-red-500 border-2 w-[50%]"
         type="price"
@@ -194,6 +200,7 @@ export default function Customer() {
     </div>     
      <div className=" p-3">
       <input
+      id='subs'
         placeholder="Subscription Price"
         className=" shadow-md rounded-md p-3 border-red-500 border-2 w-[50%]"
         type="subscription"
@@ -204,6 +211,7 @@ export default function Customer() {
 
     <div className="p-3">
       <input
+      id='pin'
         placeholder="Pincode"
         className=" shadow-md rounded-md p-3 border-teal-700 w-[50%]"
         type="pincode"
