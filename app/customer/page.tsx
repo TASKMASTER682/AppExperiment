@@ -12,7 +12,7 @@ export default function Customer() {
 
 
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('no@gmail.com');
     const [address, setAddress] = useState('');
     const [phone,setPhone] = useState('');
     const [subscription, setSubscription] = useState('');
@@ -32,7 +32,6 @@ export default function Customer() {
           const response = await fetch('https://confused-rose-headscarf.cyclic.app/api/getDeliveryBoys',{
             headers: {
               'Content-Type': 'application/json',
-              //  Authorization: `${token}`
             },
           });
           const data = await response.json();
@@ -52,7 +51,7 @@ export default function Customer() {
       </option>
     ));
     
-
+    // https://confused-rose-headscarf.cyclic.app/api
   
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -61,10 +60,11 @@ export default function Customer() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            
           },
           body: JSON.stringify({ name,address,phone,email,subscription,price,subscriptionStart, subscriptionEnd, dinnerTiffins, lunchTiffins,pincode,deliveryBoy  }),
         });
-        const data = await response.json();
+        // const data = await response.json();
     setName("")
     setEmail("")
     setAddress("")
@@ -81,7 +81,7 @@ export default function Customer() {
 
   
 
-        console.log('User created:', data);
+        // console.log('User created:', data);
         // You can perform any necessary actions after successful creation
       } catch (error) {
         console.log('Failed to create user:', error);
